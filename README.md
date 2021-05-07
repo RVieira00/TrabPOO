@@ -1,7 +1,7 @@
 ```
 TRABALHO PRÁTICO 1  - POO
 ```
-Programação Orientada por Objetos (^)
+Programação Orientada por Objetos
 7/maio/2021 Trabalho Prático de POO 2020/
 Engenharia Informática
 **7 de maio de 2021**
