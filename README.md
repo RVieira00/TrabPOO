@@ -3,8 +3,8 @@ TRABALHO PRÁTICO 1  - POO
 ```
 Programação Orientada por Objetos ||
 7/maio/2021 || Trabalho Prático de POO 2020 ||
-Engenharia Informática ||
-**7 de maio de 2021**
+Engenharia Informática
+**7 de maio de 2021** ||
 Data Limite de submissão: 28/05/20 21
 
 # CONSULTÓRIO MÉDICO
