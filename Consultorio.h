@@ -17,6 +17,7 @@ public:
     void setNome(const std::string &nome);
 
     bool addPaciente(std::string nome_paciente);
+    void printPacientes();
 };
 
 

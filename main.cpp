@@ -9,5 +9,6 @@ int main() {
     p.addPaciente("Kaka");
     p.addPaciente("Mourinho");
 
+    p.printPacientes();
     return 0;
 }
