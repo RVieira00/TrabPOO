@@ -1,6 +1,13 @@
+#include "Consultorio.h"
 #include <iostream>
 
 int main() {
-    std::cout << "GIT INIT" << std::endl;
+
+    Consultorio p("Clinica Vieira");
+
+    p.addPaciente("Joana");
+    p.addPaciente("Kaka");
+    p.addPaciente("Mourinho");
+
     return 0;
 }
