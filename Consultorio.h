@@ -11,13 +11,16 @@ private:
     Colecao<Paciente> pacientes;
 
 public:
-    Consultorio(std::string nome);
+    Consultorio(const string &mNome);
 
     const std::string &getNome() const;
     void setNome(const std::string &nome);
 
     bool addPaciente(std::string nome_paciente);
+    bool addConsulta(int paciente_id);
+
     void printPacientes();
+    void printPacienteInfo();
 };
 
 

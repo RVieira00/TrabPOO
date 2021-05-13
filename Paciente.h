@@ -2,26 +2,29 @@
 #define TRABPOO_PACIENTE_H
 
 #include "Colecao.h"
-#include <string>
 #include "Consulta.h"
+#include <string>
 
 class Paciente {
 private:
-    int m_id{};
+    int p_id{};
     std::string m_nome;
     Colecao<Consulta> consultas;
 
 public:
-    Paciente(std::string nome);
-    Paciente(int id, std::string nome);
-    Paciente(int id);
+    Paciente(const string &mNome);
+    Paciente(int pId);
+    Paciente(int pId, const string &mNome);
 
-    bool operator<(const Paciente& a) const;
+    bool operator<(const Paciente &p) const;
+    bool addConsulta(int id, float custo, const std::string &data, std::string diagonostico);
 
-    int getMId() const;
-    void setMId(int mId);
-    const std::string &getMNome() const;
-    void setMNome(const std::string &mNome);
+    int getPId() const;
+    void setPId(int pId);
+    const string &getMNome() const;
+    void setMNome(const string &mNome);
+
+    void printConsultas();
 };
 
 
