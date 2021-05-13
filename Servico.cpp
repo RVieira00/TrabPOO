@@ -19,6 +19,6 @@ void Servico::setSCusto(float sCusto) {
 const std::string &Servico::getSData() const {
     return s_data;
 }
-void Servico::setSData(const std::string &sData) {
+void Servico::setSData(const string &sData) {
     s_data = sData;
 }

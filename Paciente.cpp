@@ -1,6 +1,8 @@
 #include "Paciente.h"
 #include <iostream>
 
+using namespace std;
+
 Paciente::Paciente(const string &mNome) : m_nome(mNome) {}
 Paciente::Paciente(int pId, const string &mNome) : p_id(pId), m_nome(mNome) {}
 Paciente::Paciente(int pId) : p_id(pId) {}
@@ -30,7 +32,7 @@ bool Paciente::addConsulta(int id, float custo, const string &data, string diago
 }
 void Paciente::printConsultas() {
     for (Consulta c : consultas) {
-        std::cout << " " << c.getSId() << " " << c.getSCusto() << " " << c.getSData() << " " << c.getMDiagonostico() << " " << std::endl;
+        cout << " " << c.getSId() << " " << c.getSCusto() << " " << c.getSData() << " " << c.getMDiagonostico() << " " << endl;
         c.printExames();
     }
 }

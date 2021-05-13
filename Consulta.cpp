@@ -1,6 +1,8 @@
 #include "Consulta.h"
 #include <iostream>
 
+using namespace std;
+
 Consulta::Consulta(int id, float custo, const string &data, const string &diagonostico) : Servico(id, custo, data), m_diagonostico(diagonostico) {}
 
 
@@ -21,7 +23,7 @@ void Consulta::setMDiagonostico(const string &mDiagonostico) {
 }
 void Consulta::printExames() {
     for (Exame e : exames) {
-        cout << e.getSId() << " " << e.getSCusto() << " " << e.getSData() << " " << std::endl;
+        cout << e.getSId() << " " << e.getSCusto() << " " << e.getSData() << " " << endl;
         e.printTipologia();
     }
 }

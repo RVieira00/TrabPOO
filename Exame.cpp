@@ -1,7 +1,9 @@
 #include "Exame.h"
 #include <iostream>
 
-Exame::Exame(int id, float custo, const std::string &data, Exame::Tipologia tipologia) : Servico(id, custo, data), e_tipologia(tipologia) {}
+using namespace std;
+
+Exame::Exame(int id, float custo, const string &data, Exame::Tipologia tipologia) : Servico(id, custo, data), e_tipologia(tipologia) {}
 
 bool Exame::operator<(const Exame &e) const {
     return s_id < e.s_id;
@@ -16,12 +18,12 @@ void Exame::setETipologia(Exame::Tipologia eTipologia) {
 
 void Exame::printTipologia() {
     if (Exame::e_tipologia == 0) {
-        std::cout << "Analises Clinicas" << std::endl;
+        cout << "Analises Clinicas" << endl;
     }
     if (Exame::e_tipologia == 1) {
-        std::cout << "Imagiologia" << std::endl;
+        cout << "Imagiologia" << endl;
     }
     if (Exame::e_tipologia == 2) {
-        std::cout << "Check-Up" << std::endl;
+        cout << "Check-Up" << endl;
     }
 }
