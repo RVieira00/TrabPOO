@@ -1,38 +1,54 @@
 #include "Paciente.h"
 #include <iostream>
 
-using namespace std;
-
-Paciente::Paciente(const string &mNome) : m_nome(mNome) {}
-Paciente::Paciente(int pId, const string &mNome) : p_id(pId), m_nome(mNome) {}
-Paciente::Paciente(int pId) : p_id(pId) {}
-
+Paciente::Paciente(int id, const string &nome) : id(id), nome(nome) {}
 
 bool Paciente::operator<(const Paciente &p) const {
-    return p_id < p.p_id;
+    return id < p.id;
 }
 
-int Paciente::getPId() const {
-    return p_id;
-}
-void Paciente::setPId(int pId) {
-    p_id = pId;
-}
-const string &Paciente::getMNome() const {
-    return m_nome;
-}
-void Paciente::setMNome(const string &mNome) {
-    m_nome = mNome;
+int Paciente::getId() const {
+    return id;
 }
 
+const string &Paciente::getNome() const {
+    return nome;
+}
 
-bool Paciente::addConsulta(int id, float custo, const string &data, string diagonostico) {
-    Consulta consulta(consultas.size(), custo, data, diagonostico);
+float Paciente::getTotalFaturado() {
+
+    float totalFaturado = 0;
+
+    for (Consulta c : consultas) {
+        totalFaturado += c.getCustoTotal();
+    }
+
+    return totalFaturado;
+}
+
+bool Paciente::addConsulta(float custo, string data, string diagnostico) {
+
+    Consulta consulta(consultas.size(), custo, data, diagnostico);
     return consultas.insert(consulta);
 }
-void Paciente::printConsultas() {
+
+bool Paciente::addExameToConsulta(int consultaId, float custo, string data, Exame::Tipologia tipologia) {
+
     for (Consulta c : consultas) {
-        cout << " " << c.getSId() << " " << c.getSCusto() << " " << c.getSData() << " " << c.getMDiagonostico() << " " << endl;
-        c.printExames();
+        if (consultaId == c.id) {
+            c.addExame(custo, data, tipologia);
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void Paciente::printConsultas() {
+
+    cout << "Paciente ID: " << id << " || Nome: " << nome << endl;
+
+    for (Consulta c : consultas) {
+        c.printConsulta();
     }
 }

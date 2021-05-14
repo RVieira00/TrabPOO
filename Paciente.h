@@ -1,5 +1,5 @@
-#ifndef TRABPOO_PACIENTE_H
-#define TRABPOO_PACIENTE_H
+#ifndef TRABALHOPOO_V2_PACIENTE_H
+#define TRABALHOPOO_V2_PACIENTE_H
 
 #include "Colecao.h"
 #include "Consulta.h"
@@ -7,25 +7,22 @@
 
 class Paciente {
 private:
-    int p_id{};
-    std::string m_nome;
+    int id;
+    string nome;
     Colecao<Consulta> consultas;
 
 public:
-    Paciente(const string &mNome);
-    Paciente(int pId);
-    Paciente(int pId, const string &mNome);
+    Paciente(int id, const string &nome);
 
     bool operator<(const Paciente &p) const;
-    bool addConsulta(int id, float custo, const std::string &data, std::string diagonostico);
+    int getId() const;
+    const string &getNome() const;
+    float getTotalFaturado();
 
-    int getPId() const;
-    void setPId(int pId);
-    const string &getMNome() const;
-    void setMNome(const string &mNome);
+    bool addConsulta(float custo, string data, string diagnostico);
+    bool addExameToConsulta(int consultaId, float custo, string data, Exame::Tipologia tipologia);
 
     void printConsultas();
 };
 
-
-#endif//TRABPOO_PACIENTE_H
+#endif//TRABALHOPOO_V2_PACIENTE_H

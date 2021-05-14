@@ -1,5 +1,5 @@
-#ifndef TRABPOO_CONSULTORIO_H
-#define TRABPOO_CONSULTORIO_H
+#ifndef TRABALHOPOO_V2_CONSULTORIO_H
+#define TRABALHOPOO_V2_CONSULTORIO_H
 
 #include "Colecao.h"
 #include "Paciente.h"
@@ -7,20 +7,20 @@
 
 class Consultorio {
 private:
-    std::string m_nome;
     Colecao<Paciente> pacientes;
 
+private:
 public:
-    Consultorio(const string &mNome);
+    Consultorio();
 
-    const std::string &getNome() const;
-    void setNome(const std::string &nome);
-
-    bool addPaciente(std::string nome_paciente);
+    bool addPaciente(string nome);
+    bool addConsultaToPaciente(int pacienteId, float custo, string data, string diagnostico);
+    bool addExameToConsulta(int pacienteId, int consultaId, float custo, string data, Exame::Tipologia tipologia);
 
     void printPacientes();
-    void printPacienteInfo();
+    void printConsultasFromPaciente(int pacienteId);
+
+    void printTotalFaturado();
 };
 
-
-#endif//TRABPOO_CONSULTORIO_H
+#endif//TRABALHOPOO_V2_CONSULTORIO_H

@@ -3,27 +3,35 @@
 
 using namespace std;
 
-Consulta::Consulta(int id, float custo, const string &data, const string &diagonostico) : Servico(id, custo, data), m_diagonostico(diagonostico) {}
-
+Consulta::Consulta(int id, float custo, const string &data, const string &diagnostico) : Servico(id, custo, data), diagnostico(diagnostico) {}
 
 bool Consulta::operator<(const Consulta &c) const {
-    return s_id < c.s_id;
+    return id < c.id;
 }
 
-bool Consulta::addExame(int id, float custo, std::string data, Exame::Tipologia tipologia) {
+float Consulta::getCustoTotal() {
+
+    float custoTotal = custo;
+
+    for (Exame e : exames) {
+        custoTotal += e.custo;
+    }
+
+    return custoTotal;
+}
+
+bool Consulta::addExame(float custo, string data, Exame::Tipologia tipologia) {
+
     Exame exame(exames.size(), custo, data, tipologia);
     return exames.insert(exame);
 }
 
-const string &Consulta::getMDiagonostico() const {
-    return m_diagonostico;
-}
-void Consulta::setMDiagonostico(const string &mDiagonostico) {
-    m_diagonostico = mDiagonostico;
-}
-void Consulta::printExames() {
+void Consulta::printConsulta() {
+
+    cout << "Consulta ID : " << id << " || Custo: " << custo << " || Data: " << data << "\n"
+         << "diagnostico: " << diagnostico << endl;
+
     for (Exame e : exames) {
-        cout << e.getSId() << " " << e.getSCusto() << " " << e.getSData() << " " << endl;
-        e.printTipologia();
+        e.printExame();
     }
 }

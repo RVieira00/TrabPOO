@@ -1,5 +1,5 @@
-#ifndef TRABPOO_CONSULTA_H
-#define TRABPOO_CONSULTA_H
+#ifndef TRABALHOPOO_V2_CONSULTA_H
+#define TRABALHOPOO_V2_CONSULTA_H
 
 #include "Colecao.h"
 #include "Exame.h"
@@ -8,18 +8,17 @@
 
 class Consulta : public Servico {
 private:
-    std::string m_diagonostico;
+    string diagnostico;
     Colecao<Exame> exames;
 
 public:
-    Consulta(int id, float custo, const string &data, const string &diagonostico);
-
+    Consulta(int id, float custo, const string &data, const string &diagnostico);
     bool operator<(const Consulta &c) const;
-    bool addExame(int id, float custo, std::string data, Exame::Tipologia tipologia);
+    float getCustoTotal();
 
-    const string &getMDiagonostico() const;
-    void setMDiagonostico(const string &mDiagonostico);
+    bool addExame(float custo, string data, Exame::Tipologia tipologia);
 
-    void printExames();
+    void printConsulta();
 };
-#endif//TRABPOO_CONSULTA_H
+
+#endif//TRABALHOPOO_V2_CONSULTA_H

@@ -1,11 +1,9 @@
-#ifndef TRABPOO_EXAME_H
-#define TRABPOO_EXAME_H
+#ifndef TRABALHOPOO_V2_EXAME_H
+#define TRABALHOPOO_V2_EXAME_H
 
 #include "Servico.h"
-#include <string>
 
 class Exame : public Servico {
-
 public:
     enum Tipologia { Analises_Clinicas = 0,
                      Imagiologia = 1,
@@ -13,17 +11,14 @@ public:
     };
 
 private:
-    Tipologia e_tipologia;
+    Tipologia eTipologia;
 
 public:
-    Exame(int id, float custo, const std::string &data, Tipologia tipologia);
+    Exame(int id, float custo, const std::string &data, Tipologia eTipologia);
 
     bool operator<(const Exame &e) const;
 
-    Tipologia getETipologia() const;
-    void setETipologia(Tipologia eTipologia);
-
-    void printTipologia();
+    void printExame();
 };
 
-#endif//TRABPOO_EXAME_H
+#endif//TRABALHOPOO_V2_EXAME_H
