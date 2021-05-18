@@ -1,5 +1,5 @@
-#ifndef TRABALHOPOO_V2_CONSULTA_H
-#define TRABALHOPOO_V2_CONSULTA_H
+#ifndef CONSULTA_H
+#define CONSULTA_H
 
 #include "Colecao.h"
 #include "Exame.h"
@@ -21,4 +21,4 @@ public:
     void printConsulta();
 };
 
-#endif//TRABALHOPOO_V2_CONSULTA_H
+#endif//CONSULTA_H

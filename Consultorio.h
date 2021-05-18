@@ -1,5 +1,5 @@
-#ifndef TRABALHOPOO_V2_CONSULTORIO_H
-#define TRABALHOPOO_V2_CONSULTORIO_H
+#ifndef CONSULTORIO_H
+#define CONSULTORIO_H
 
 #include "Colecao.h"
 #include "Paciente.h"
@@ -23,4 +23,4 @@ public:
     void printTotalFaturado();
 };
 
-#endif//TRABALHOPOO_V2_CONSULTORIO_H
+#endif//CONSULTORIO_H

@@ -1,5 +1,5 @@
-#ifndef TRABALHOPOO_V2_PACIENTE_H
-#define TRABALHOPOO_V2_PACIENTE_H
+#ifndef PACIENTE_H
+#define PACIENTE_H
 
 #include "Colecao.h"
 #include "Consulta.h"
@@ -25,4 +25,4 @@ public:
     void printConsultas();
 };
 
-#endif//TRABALHOPOO_V2_PACIENTE_H
+#endif//PACIENTE_H

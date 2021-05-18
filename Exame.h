@@ -1,5 +1,5 @@
-#ifndef TRABALHOPOO_V2_EXAME_H
-#define TRABALHOPOO_V2_EXAME_H
+#ifndef EXAME_H
+#define EXAME_H
 
 #include "Servico.h"
 
@@ -21,4 +21,4 @@ public:
     void printExame();
 };
 
-#endif//TRABALHOPOO_V2_EXAME_H
+#endif//EXAME_H

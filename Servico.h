@@ -1,5 +1,5 @@
-#ifndef TRABALHOPOO_V2_SERVICO_H
-#define TRABALHOPOO_V2_SERVICO_H
+#ifndef SERVICO_H
+#define SERVICO_H
 
 #include <string>
 
@@ -13,4 +13,4 @@ public:
     Servico(int id, float custo, const std::string &data);
 };
 
-#endif//TRABALHOPOO_V2_SERVICO_H
+#endif//SERVICO_H
