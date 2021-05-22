@@ -35,6 +35,7 @@ void Consulta::printConsulta() {
     cout << "Consulta ID : " << getId() << " || Custo: " << getCusto() << " || Data: " << getData() << "\n"
          << "Diagnostico: " << getDiagnostico() << endl;
 
+    cout << "Numero de Exames associados: " << exames.size() << endl;
     for (Exame e : exames) {
         cout << "\t";
         e.printExame();
