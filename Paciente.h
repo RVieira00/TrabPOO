@@ -14,13 +14,15 @@ private:
 public:
     Paciente(int id, const string &nome);
 
-    bool operator<(const Paciente &p) const;
     int getId() const;
     const string &getNome() const;
     float getTotalFaturado();
 
-    bool addConsulta(float custo, string data, string diagnostico);
-    bool addExameToConsulta(int consultaId, float custo, string data, Exame::Tipologia tipologia);
+    bool addConsulta(float custo, const string &data, const string &diagnostico);
+    bool addExameToConsulta(int consultaId, float custo, const string &data, Exame::Tipologia tipologia);
+
+    bool operator<(const Paciente &p) const;
+    Consulta *findConsulta(int consultaId);
 
     void printConsultas();
 };

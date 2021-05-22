@@ -1,8 +1,7 @@
 ///////////////Colecao.h (vrs. 13/Dez/2018)////////////////
 #pragma once
-#include<set>
+#include <set>
 using namespace std;
-
 
 
 template<class K>
@@ -19,25 +18,23 @@ public:
 };
 
 template<class K>
-bool Colecao<K>::insert(const K &c)
-{
+bool Colecao<K>::insert(const K &c) {
     pair<set<K>::iterator, bool> r = set<K>::insert(c);
-    return(r.second);
+    return (r.second);
 }
 
 template<class K>
-K *Colecao<K>::find(const K &c) const
-{
+K *Colecao<K>::find(const K &c) const {
     K *r = 0;
     typename set<K>::iterator i = set<K>::find(c);
     if (i != set<K>::end())
-        r = const_cast<K*>(i.operator->());
-    return(r);
+        r = const_cast<K *>(i.operator->());
+    return (r);
 }
 
 template<class K>
 int Colecao<K>::size() const {
-    return((int)set<K>::size());
+    return ((int) set<K>::size());
 }
 
 template<class K>

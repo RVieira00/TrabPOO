@@ -16,9 +16,9 @@ private:
 public:
     Exame(int id, float custo, const std::string &data, Tipologia eTipologia);
 
-    bool operator<(const Exame &e) const;
-
     void printExame();
+
+    bool operator<(const Exame &e) const;
 };
 
 #endif//EXAME_H

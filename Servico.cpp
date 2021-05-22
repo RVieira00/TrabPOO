@@ -1,3 +1,15 @@
 #include "Servico.h"
 
-Servico::Servico(int id, float custo, const std::string &data) : id(id), custo(custo), data(data) {}
+using namespace std;
+
+Servico::Servico(int id, float custo, const string &data) : id(id), custo(custo), data(data) {}
+
+int Servico::getId() const {
+    return id;
+}
+float Servico::getCusto() const {
+    return custo;
+}
+const string &Servico::getData() const {
+    return data;
+}

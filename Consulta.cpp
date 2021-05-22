@@ -5,22 +5,26 @@ using namespace std;
 
 Consulta::Consulta(int id, float custo, const string &data, const string &diagnostico) : Servico(id, custo, data), diagnostico(diagnostico) {}
 
-bool Consulta::operator<(const Consulta &c) const {
-    return id < c.id;
-}
-
 float Consulta::getCustoTotal() {
 
     float custoTotal = custo;
 
-    for (Exame e : exames) {
-        custoTotal += e.custo;
+    for (const Exame &e : exames) {
+        custoTotal += e.getCusto();
     }
 
     return custoTotal;
 }
 
-bool Consulta::addExame(float custo, string data, Exame::Tipologia tipologia) {
+const string &Consulta::getDiagnostico() const {
+    return diagnostico;
+}
+
+bool Consulta::operator<(const Consulta &c) const {
+    return id < c.id;
+}
+
+bool Consulta::addExame(float custo, const string &data, Exame::Tipologia tipologia) {
 
     Exame exame(exames.size(), custo, data, tipologia);
     return exames.insert(exame);
@@ -28,10 +32,11 @@ bool Consulta::addExame(float custo, string data, Exame::Tipologia tipologia) {
 
 void Consulta::printConsulta() {
 
-    cout << "Consulta ID : " << id << " || Custo: " << custo << " || Data: " << data << "\n"
-         << "diagnostico: " << diagnostico << endl;
+    cout << "Consulta ID : " << getId() << " || Custo: " << getCusto() << " || Data: " << getData() << "\n"
+         << "Diagnostico: " << getDiagnostico() << endl;
 
     for (Exame e : exames) {
+        cout << "\t";
         e.printExame();
     }
 }

@@ -7,20 +7,24 @@
 
 class Consultorio {
 private:
+    std::string nome;
     Colecao<Paciente> pacientes;
 
 private:
 public:
     Consultorio();
+    Consultorio(const string &nome);
 
-    bool addPaciente(string nome);
-    bool addConsultaToPaciente(int pacienteId, float custo, string data, string diagnostico);
-    bool addExameToConsulta(int pacienteId, int consultaId, float custo, string data, Exame::Tipologia tipologia);
+    bool addPaciente(const string &pacienteNome);
+    bool addConsultaToPaciente(int pacienteId, float custo, const string &data, const string &diagnostico);
+    bool addExameToConsulta(int pacienteId, int consultaId, float custo, const string &data, Exame::Tipologia tipologia);
 
     void printPacientes();
     void printConsultasFromPaciente(int pacienteId);
 
-    void printTotalFaturado();
+    const string &getNome() const;
+    float getTotalFaturado();
+    Paciente *findPaciente(int pacienteId);
 };
 
 #endif//CONSULTORIO_H

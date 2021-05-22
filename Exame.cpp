@@ -20,7 +20,7 @@ void Exame::printExame() {
             tipo = "Check-Up";
             break;
     }
-    cout << "Exame ID: " << id << " || Custo: " << custo << " || Data: " << data << " || Tipologia: " << tipo << endl;
+    cout << "Exame ID: " << getId() << " || Custo: " << getCusto() << " || Data: " << getData() << " || Tipologia: " << tipo << endl;
 }
 
 bool Exame::operator<(const Exame &e) const {

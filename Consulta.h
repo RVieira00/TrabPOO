@@ -13,10 +13,12 @@ private:
 
 public:
     Consulta(int id, float custo, const string &data, const string &diagnostico);
-    bool operator<(const Consulta &c) const;
-    float getCustoTotal();
 
-    bool addExame(float custo, string data, Exame::Tipologia tipologia);
+    float getCustoTotal();
+    const string &getDiagnostico() const;
+
+    bool operator<(const Consulta &c) const;
+    bool addExame(float custo, const string& data, Exame::Tipologia tipologia);
 
     void printConsulta();
 };
