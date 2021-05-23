@@ -7,7 +7,7 @@
 
 class Consultorio {
 private:
-    std::string nome;
+    string nome;
     Colecao<Paciente> pacientes;
 
 private:
