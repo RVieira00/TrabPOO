@@ -5,9 +5,10 @@
 
 class Exame : public Servico {
 public:
-    enum Tipologia { Analises_Clinicas = 0,
-                     Imagiologia = 1,
-                     Check_Up = 2,
+    enum Tipologia {
+        Analises_Clinicas = 0,
+        Imagiologia = 1,
+        Check_Up = 2,
     };
 
 private:

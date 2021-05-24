@@ -12,12 +12,12 @@ private:
     Colecao<Exame> exames;
 
 public:
-    Consulta(int id, float custo, const string &data, const string &diagnostico);
+    Consulta(int id, float custo, const string& data, const string& diagnostico);
 
     float getCustoTotal();
-    const string &getDiagnostico() const;
+    const string& getDiagnostico() const;
 
-    bool operator<(const Consulta &c) const;
+    bool operator<(const Consulta& c) const;
     bool addExame(float custo, const string& data, Exame::Tipologia tipologia);
 
     void printConsulta();
