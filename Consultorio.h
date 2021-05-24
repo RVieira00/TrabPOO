@@ -10,7 +10,6 @@ private:
     string nome;
     Colecao<Paciente> pacientes;
 
-private:
 public:
     Consultorio();
     Consultorio(const string &nome);
