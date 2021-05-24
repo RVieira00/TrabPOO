@@ -58,6 +58,7 @@ void Paciente::printConsultas() {
     auto it = consultas.begin();
 
     while (it != consultas.end()) {
+        cout << "\n";
         findConsulta(it->getId())->printConsulta();
         it++;
     }
