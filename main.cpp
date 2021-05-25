@@ -15,14 +15,14 @@ int main() {
     c.printPacientes();
     cout << endl;
 
-    c.addConsultaToPaciente(0, 15.22, "23-32-1992", "Lorem ipsum dolor sit amet");
+    c.addConsultaToPaciente(0, 15.22f, "23-32-1992", "Lorem ipsum dolor sit amet");
     c.addExameToConsulta(0, 0, 23, "23-32-1992", Exame::Analises_Clinicas);
 
     c.addConsultaToPaciente(1, 15, "09-01-1985", "Oremus Ora et labora");
-    c.addConsultaToPaciente(1, 19.22, "01-09-1986", "Finibus Bonorum et Malorum");
+    c.addConsultaToPaciente(1, 19.23f, "01-09-1986", "Finibus Bonorum et Malorum");
 
     c.addExameToConsulta(1, 1, 10, "01-09-1986", Exame::Check_Up);
-    c.addExameToConsulta(1, 1, 10, "01-09-1986", Exame::Imagiologia);
+    c.addExameToConsulta(1, 1, 16, "01-09-1986", Exame::Imagiologia);
 
     cout << "PRINT CONSULTAS FROM PACIENTE 0" << endl;
     c.printConsultasFromPaciente(0);
