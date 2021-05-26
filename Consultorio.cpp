@@ -41,11 +41,15 @@ bool Consultorio::addExameToConsulta(int pacienteId, int consultaId, float custo
 
 void Consultorio::printPacientes() {
 
-    auto it = pacientes.begin();
+    // auto it = pacientes.begin();
 
-    while (it != pacientes.end()) {
-        cout << "Paciente ID: " << it->getId() << " || Nome: " << it->getNome() << endl;
-        it++;
+    // while (it != pacientes.end()) {
+    //     cout << "Paciente ID: " << it->getId() << " || Nome: " << it->getNome() << endl;
+    //     it++;
+    // }
+
+    for (const Paciente &p : pacientes) {
+        cout << "Paciente ID: " << p.getId() << " || Nome: " << p.getNome() << endl;
     }
 }
 
@@ -73,13 +77,18 @@ const string &Consultorio::getNome() const {
 }
 
 float Consultorio::getTotalFaturado() {
+
     float totalFaturado = 0.0f;
 
-    auto it = pacientes.begin();
+    // auto it = pacientes.begin();
 
-    while (it != pacientes.end()) {
-        totalFaturado += findPaciente(it->getId())->getTotalFaturado();
-        it++;
+    // while (it != pacientes.end()) {
+    //     totalFaturado += findPaciente(it->getId())->getTotalFaturado();
+    //     it++;
+    // }
+
+    for (const Paciente &p : pacientes) {
+        totalFaturado += findPaciente(p.getId())->getTotalFaturado();
     }
 
     return totalFaturado;

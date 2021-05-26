@@ -55,11 +55,16 @@ Consulta *Paciente::findConsulta(int consultaId) {
 
 void Paciente::printConsultas() {
 
-    auto it = consultas.begin();
+    // auto it = consultas.begin();
 
-    while (it != consultas.end()) {
+    // while (it != consultas.end()) {
+    //     cout << "\n";
+    //     findConsulta(it->getId())->printConsulta();
+    //     it++;
+    // }
+
+    for (const Consulta &c : consultas) {
         cout << "\n";
-        findConsulta(it->getId())->printConsulta();
-        it++;
+        findConsulta(c.getId())->printConsulta();
     }
 }
