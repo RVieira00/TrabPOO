@@ -1,39 +1,37 @@
 #include "Consultorio.h"
 #include <iostream>
 
-using namespace std;
-
 Consultorio::Consultorio() = default;
 
-Consultorio::Consultorio(const string &nome) : nome(nome) {}
+Consultorio::Consultorio(const std::string &nome) : nome(nome) {}
 
-bool Consultorio::addPaciente(const string &pacienteNome) {
+bool Consultorio::addPaciente(const std::string &pacienteNome) {
 
     Paciente paciente(pacientes.size(), pacienteNome);
     return pacientes.insert(paciente);
 }
 
-bool Consultorio::addConsultaToPaciente(int pacienteId, float custo, const string &data, const string &diagnostico) {
+bool Consultorio::addConsultaToPaciente(int pacienteId, float custo, const std::string &data, const std::string &diagnostico) {
 
     Paciente *fP = findPaciente(pacienteId);
 
     if (fP != nullptr)
         return fP->addConsulta(custo, data, diagnostico);
     else {
-        cout << "Paciente ID: " << pacienteId << "nao existe" << endl;
+        std::cout << "Paciente ID: " << pacienteId << "nao existe" << std::endl;
     }
 
     return false;
 }
 
-bool Consultorio::addExameToConsulta(int pacienteId, int consultaId, float custo, const string &data, Exame::Tipologia tipologia) {
+bool Consultorio::addExameToConsulta(int pacienteId, int consultaId, float custo, const std::string &data, Exame::Tipologia tipologia) {
 
     Paciente *fP = findPaciente(pacienteId);
 
     if (fP != nullptr)
         return fP->addExameToConsulta(consultaId, custo, data, tipologia);
     else {
-        cout << "Paciente ID: " << pacienteId << "nao existe" << endl;
+        std::cout << "Paciente ID: " << pacienteId << "nao existe" << std::endl;
     }
 
     return false;
@@ -41,15 +39,8 @@ bool Consultorio::addExameToConsulta(int pacienteId, int consultaId, float custo
 
 void Consultorio::printPacientes() {
 
-    // auto it = pacientes.begin();
-
-    // while (it != pacientes.end()) {
-    //     cout << "Paciente ID: " << it->getId() << " || Nome: " << it->getNome() << endl;
-    //     it++;
-    // }
-
     for (const Paciente &p : pacientes) {
-        cout << "Paciente ID: " << p.getId() << " || Nome: " << p.getNome() << endl;
+        std::cout << "Paciente ID: " << p.getId() << " || Nome: " << p.getNome() << std::endl;
     }
 }
 
@@ -64,28 +55,21 @@ void Consultorio::printConsultasFromPaciente(int pacienteId) {
     Paciente *fP = findPaciente(pacienteId);
 
     if (fP != nullptr) {
-        cout << "Paciente ID: " << fP->getId() << " || Nome: " << fP->getNome() << endl;
+        std::cout << "Paciente ID: " << fP->getId() << " || Nome: " << fP->getNome() << std::endl;
         return fP->printConsultas();
 
     } else {
-        cout << "Paciente ID: " << pacienteId << " nao existe" << endl;
+        std::cout << "Paciente ID: " << pacienteId << " nao existe" << std::endl;
     }
 }
 
-const string &Consultorio::getNome() const {
+const std::string &Consultorio::getNome() const {
     return nome;
 }
 
 float Consultorio::getTotalFaturado() {
 
     float totalFaturado = 0.0f;
-
-    // auto it = pacientes.begin();
-
-    // while (it != pacientes.end()) {
-    //     totalFaturado += findPaciente(it->getId())->getTotalFaturado();
-    //     it++;
-    // }
 
     for (const Paciente &p : pacientes) {
         totalFaturado += findPaciente(p.getId())->getTotalFaturado();

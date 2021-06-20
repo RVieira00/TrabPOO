@@ -8,18 +8,18 @@
 class Paciente {
 private:
     int id;
-    string nome;
+    std::string nome;
     Colecao<Consulta> consultas;
 
 public:
-    Paciente(int id, const string &nome);
+    Paciente(int id, const std::string &nome);
 
     int getId() const;
-    const string &getNome() const;
+    const std::string &getNome() const;
     float getTotalFaturado();
 
-    bool addConsulta(float custo, const string &data, const string &diagnostico);
-    bool addExameToConsulta(int consultaId, float custo, const string &data, Exame::Tipologia tipologia);
+    bool addConsulta(float custo, const std::string &data, const std::string &diagnostico);
+    bool addExameToConsulta(int consultaId, float custo, const std::string &data, Exame::Tipologia tipologia);
 
     bool operator<(const Paciente &p) const;
     Consulta *findConsulta(int consultaId);
