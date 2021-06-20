@@ -7,21 +7,21 @@
 
 class Consultorio {
 private:
-    string nome;
+    std::string nome;
     Colecao<Paciente> pacientes;
 
 public:
     Consultorio();
-    Consultorio(const string &nome);
+    explicit Consultorio(const std::string &nome);
 
-    bool addPaciente(const string &pacienteNome);
-    bool addConsultaToPaciente(int pacienteId, float custo, const string &data, const string &diagnostico);
-    bool addExameToConsulta(int pacienteId, int consultaId, float custo, const string &data, Exame::Tipologia tipologia);
+    bool addPaciente(const std::string &pacienteNome);
+    bool addConsultaToPaciente(int pacienteId, float custo, const std::string &data, const std::string &diagnostico);
+    bool addExameToConsulta(int pacienteId, int consultaId, float custo, const std::string &data, Exame::Tipologia tipologia);
 
     void printPacientes();
     void printConsultasFromPaciente(int pacienteId);
 
-    const string &getNome() const;
+    const std::string &getNome() const;
     float getTotalFaturado();
     Paciente *findPaciente(int pacienteId);
 };

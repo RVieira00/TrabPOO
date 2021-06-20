@@ -1,13 +1,11 @@
 #include "Exame.h"
 #include <iostream>
 
-using namespace std;
-
-Exame::Exame(int id, float custo, const string &data, Exame::Tipologia eTipologia) : Servico(id, custo, data), eTipologia(eTipologia) {}
+Exame::Exame(int id, float custo, const std::string &data, Exame::Tipologia eTipologia) : Servico(id, custo, data), eTipologia(eTipologia) {}
 
 void Exame::printExame() {
 
-    string tipo;
+    std::string tipo;
 
     switch (eTipologia) {
         case 0:
@@ -20,7 +18,7 @@ void Exame::printExame() {
             tipo = "Check-Up";
             break;
     }
-    cout << "Exame ID: " << getId() << " || Custo: " << getCusto() << " || Data: " << getData() << " || Tipologia: " << tipo << endl;
+    std::cout << "Exame ID: " << getId() << " || Custo: " << getCusto() << " || Data: " << getData() << " || Tipologia: " << tipo << std::endl;
 }
 
 bool Exame::operator<(const Exame &e) const {
