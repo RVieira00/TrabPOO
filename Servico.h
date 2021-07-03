@@ -12,9 +12,9 @@ protected:
 public:
     Servico(int id, float custo, const std::string &data);
 
-    int getId() const;
-    float getCusto() const;
-    const std::string &getData() const;
+    virtual int getId() const;
+    virtual float getCusto() const;
+    virtual const std::string &getData() const;
 };
 
 #endif//SERVICO_H
